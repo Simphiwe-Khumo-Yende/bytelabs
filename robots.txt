@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://happay.co.za/sitemap.xml
