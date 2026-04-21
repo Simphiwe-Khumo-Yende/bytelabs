@@ -23,12 +23,12 @@ onMounted(() => {
     <div ref="heroRef" style="max-width: 1100px; margin-left: auto; margin-right: auto; padding-left: 24px; padding-right: 24px;">
       <!-- Announcement pill -->
       <div data-hero style="opacity:0; display: flex; justify-content: center; margin-bottom: 48px;">
-        <a href="#work" style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; border-radius: 36px; border: 1px solid rgba(24,26,28,0.1); font-size: 13px; color: rgba(24,26,28,0.7); text-decoration: none;">
+        <router-link to="/#work" style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; border-radius: 36px; border: 1px solid rgba(24,26,28,0.1); font-size: 13px; color: rgba(24,26,28,0.7); text-decoration: none;">
           ByteLabs now building Happay — our in-house fintech product
           <svg width="10" height="10" viewBox="0 0 24 24" fill="none" style="opacity: 0.6;">
             <path d="M7 17L17 7M17 7H7M17 7v10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-        </a>
+        </router-link>
       </div>
 
       <!-- Serif heading -->
@@ -49,9 +49,9 @@ onMounted(() => {
 
       <!-- CTA -->
       <div data-hero style="opacity:0; display: flex; justify-content: center; margin-bottom: 80px;">
-        <a href="#contact" style="display: inline-flex; align-items: center; justify-content: center; padding: 12px 28px; background-color: #181a1c; color: #fff; font-size: 14px; font-weight: 500; border-radius: 50px; text-decoration: none;">
+        <router-link to="/contact" style="display: inline-flex; align-items: center; justify-content: center; padding: 12px 28px; background-color: #181a1c; color: #fff; font-size: 14px; font-weight: 500; border-radius: 50px; text-decoration: none;">
           Start a Project
-        </a>
+        </router-link>
       </div>
 
       <!-- Product mockup -->

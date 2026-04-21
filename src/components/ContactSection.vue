@@ -1,18 +1,30 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, reactive, onMounted, onUnmounted } from 'vue'
 import { animate, inView } from 'motion'
 
 const cardRef = ref(null)
-const form = ref({ name: '', email: '', message: '' })
-const submitted = ref(false)
+const form = reactive({ name: '', email: '', message: '' })
+const status = ref('idle') // idle | sending | sent | error
 const stops = []
 
-function handleSubmit() {
-  submitted.value = true
-  setTimeout(() => {
-    form.value = { name: '', email: '', message: '' }
-    submitted.value = false
-  }, 3000)
+const API_URL = import.meta.env.VITE_CONTACT_API || 'https://bytelabs-contact-api.onrender.com'
+
+async function handleSubmit() {
+  status.value = 'sending'
+  try {
+    const res = await fetch(`${API_URL}/contact`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: form.name, email: form.email, message: form.message })
+    })
+    if (!res.ok) throw new Error('Failed')
+    status.value = 'sent'
+    Object.assign(form, { name: '', email: '', message: '' })
+    setTimeout(() => { status.value = 'idle' }, 4000)
+  } catch {
+    status.value = 'error'
+    setTimeout(() => { status.value = 'idle' }, 4000)
+  }
 }
 
 onMounted(() => {
@@ -43,10 +55,10 @@ onUnmounted(() => stops.forEach((s) => s()))
               Whether you have a project in mind or just want to explore possibilities — we'd love to hear from you.
             </p>
             <a
-              href="mailto:hello@bytelabs.dev"
+              href="mailto:bytelabs@happay.co.za"
               class="text-sm font-medium text-dark underline decoration-dark/20 underline-offset-4 hover:decoration-dark transition-colors"
             >
-              hello@bytelabs.dev
+              bytelabs@happay.co.za
             </a>
           </div>
 
@@ -65,8 +77,11 @@ onUnmounted(() => stops.forEach((s) => s()))
                 <label class="text-xs font-medium text-dark/50 mb-1.5 block">Message</label>
                 <textarea v-model="form.message" rows="4" required class="input-field resize-none" placeholder="Tell us about your project..." />
               </div>
-              <button type="submit" class="btn btn-lg btn-primary w-full mt-2" :disabled="submitted">
-                {{ submitted ? 'Message Sent!' : 'Send Message' }}
+              <button type="submit" class="btn btn-lg btn-primary w-full mt-2" :disabled="status === 'sending' || status === 'sent'">
+                <template v-if="status === 'idle'">Send Message</template>
+                <template v-else-if="status === 'sending'">Sending...</template>
+                <template v-else-if="status === 'sent'">Message Sent!</template>
+                <template v-else>Try Again</template>
               </button>
             </form>
           </div>

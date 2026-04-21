@@ -1,25 +1,31 @@
 <script setup>
 import HeroSection from '../components/HeroSection.vue'
 import StatsSection from '../components/StatsSection.vue'
-import ProcessSection from '../components/ProcessSection.vue'
+import ServicesSection from '../components/ServicesSection.vue'
 import DesignSection from '../components/DesignSection.vue'
-import BackendSection from '../components/BackendSection.vue'
-import CrossPlatformSection from '../components/CrossPlatformSection.vue'
+import ProcessSection from '../components/ProcessSection.vue'
 import TestimonialsSection from '../components/TestimonialsSection.vue'
 import TeamSection from '../components/TeamSection.vue'
 import FAQSection from '../components/FAQSection.vue'
+import CtaSection from '../components/CtaSection.vue'
 </script>
 
 <template>
   <main>
+    <!-- 1. Hook: what we do + social proof -->
     <HeroSection />
     <StatsSection />
-    <ProcessSection />
+
+    <!-- 2. Convince: our capabilities -->
+    <ServicesSection />
     <DesignSection />
-    <BackendSection />
-    <CrossPlatformSection />
-    <TestimonialsSection />
+    <ProcessSection />
+
+    <!-- 4. Connect: who we are -->
     <TeamSection />
+
+    <!-- 5. Close: remove objections + CTA -->
     <FAQSection />
+    <CtaSection />
   </main>
 </template>

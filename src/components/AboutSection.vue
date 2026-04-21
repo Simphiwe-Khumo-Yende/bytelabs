@@ -46,7 +46,7 @@ onUnmounted(() => stops.forEach((s) => s()))
               ByteLabs is a dev house and product studio specializing in custom software, web and mobile app development.
               We work with startups and businesses to turn ideas into polished, scalable digital products — and we're building our own along the way.
             </p>
-            <a href="#contact" class="btn btn-sm btn-primary">Work with us</a>
+            <router-link to="/contact" class="btn btn-sm btn-primary">Work with us</router-link>
           </div>
         </div>
       </div>

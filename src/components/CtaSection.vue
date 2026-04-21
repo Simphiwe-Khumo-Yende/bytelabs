@@ -38,7 +38,7 @@ onUnmounted(() => stops.forEach((s) => s()))
         <h3 class="heading-serif text-3xl sm:text-4xl md:text-5xl text-dark mb-8">
           Ready to bring your idea to life?
         </h3>
-        <a href="#contact" class="btn btn-lg btn-primary">Start a Project</a>
+        <router-link to="/contact" class="btn btn-lg btn-primary">Start a Project</router-link>
       </div>
     </div>
   </section>

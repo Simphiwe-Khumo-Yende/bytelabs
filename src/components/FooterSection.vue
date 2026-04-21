@@ -24,7 +24,7 @@ onMounted(() => {
     <section data-animate class="cta-section">
       <div class="cta-badge">Get Started</div>
       <h2 class="cta-heading">Let's build something great.</h2>
-      <a href="#contact" class="cta-button">Start a Project</a>
+      <router-link to="/contact" class="cta-button">Start a Project</router-link>
     </section>
 
     <!-- Footer -->
@@ -40,10 +40,10 @@ onMounted(() => {
         <div class="footer-column">
           <span class="footer-column-title">Services</span>
           <ul>
-            <li><a href="#services">Web Development</a></li>
-            <li><a href="#services">Mobile Apps</a></li>
-            <li><a href="#services">UI/UX Design</a></li>
-            <li><a href="#services">Backend Systems</a></li>
+            <li><router-link to="/#services">Web Development</router-link></li>
+            <li><router-link to="/#services">Mobile Apps</router-link></li>
+            <li><router-link to="/#services">UI/UX Design</router-link></li>
+            <li><router-link to="/#services">Backend Systems</router-link></li>
           </ul>
         </div>
 
@@ -51,10 +51,10 @@ onMounted(() => {
         <div class="footer-column">
           <span class="footer-column-title">Projects</span>
           <ul>
-            <li><a href="#work">Gaiosophy</a></li>
-            <li><a href="#work">StrikePoint</a></li>
-            <li><a href="#work">Happay</a></li>
-            <li><a href="#work">SafeDeal</a></li>
+            <li><router-link to="/#work">Gaiosophy</router-link></li>
+            <li><router-link to="/#work">StrikePoint</router-link></li>
+            <li><router-link to="/#work">Happay</router-link></li>
+            <li><router-link to="/#work">SafeDeal</router-link></li>
           </ul>
         </div>
 
@@ -62,8 +62,8 @@ onMounted(() => {
         <div class="footer-column">
           <span class="footer-column-title">Company</span>
           <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#">Careers</a></li>
+            <li><router-link to="/#about">About</router-link></li>
+            <li><router-link to="/contact">Careers</router-link></li>
           </ul>
         </div>
 
@@ -71,7 +71,7 @@ onMounted(() => {
         <div class="footer-column">
           <span class="footer-column-title">Contact</span>
           <ul>
-            <li><a href="mailto:hello@bytelabs.dev">hello@bytelabs.dev</a></li>
+            <li><a href="mailto:bytelabs@happay.co.za">bytelabs@happay.co.za</a></li>
             <li><a href="tel:+27646116075">+27 64 611 6075</a></li>
             <li><span class="footer-address">807 Ndlovu St, Soshanguve<br>Block DD, Pretoria, 0152</span></li>
           </ul>

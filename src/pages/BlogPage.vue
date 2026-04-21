@@ -262,7 +262,7 @@ onMounted(() => {
           <div class="cta-card">
             <h3>Interested in partnering or investing?</h3>
             <p>We're building the future of commerce in South Africa. Get in touch to learn more about Happay and SafeDeal.</p>
-            <a href="/#contact" class="cta-button">Contact ByteLabs</a>
+            <router-link to="/contact" class="cta-button">Contact ByteLabs</router-link>
           </div>
         </section>
       </div>
