@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://happay.co.za/sitemap.xml
+Sitemap: https://bytelabs.dev/sitemap.xml
