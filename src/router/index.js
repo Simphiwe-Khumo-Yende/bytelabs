@@ -1,7 +1,8 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from '../pages/HomePage.vue'
 import BlogPage from '../pages/BlogPage.vue'
 import ContactPage from '../pages/ContactPage.vue'
+import NotFoundPage from '../pages/NotFoundPage.vue'
 
 const routes = [
   {
@@ -18,11 +19,16 @@ const routes = [
     path: '/contact',
     name: 'Contact',
     component: ContactPage
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'NotFound',
+    component: NotFoundPage
   }
 ]
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes,
   scrollBehavior(to, from, savedPosition) {
     if (to.hash) {
