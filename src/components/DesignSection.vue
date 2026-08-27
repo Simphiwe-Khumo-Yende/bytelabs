@@ -188,6 +188,16 @@ onMounted(() => {
           <p class="card-description">Real-time feedback loops between design and development. No lost context.</p>
         </div>
       </div>
+
+      <div data-animate class="view-demo-wrapper">
+        <router-link to="/ui-ux-design" class="view-demo-btn">
+          View Demo
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"/>
+            <path d="M12 5l7 7-7 7"/>
+          </svg>
+        </router-link>
+      </div>
     </div>
   </section>
 </template>
@@ -212,6 +222,30 @@ onMounted(() => {
   margin-bottom: 60px;
   line-height: 1.1;
   color: #1a1a1a;
+}
+
+.view-demo-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 56px;
+}
+
+.view-demo-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border-radius: 50px;
+  border: 1px solid rgba(24, 26, 28, 0.15);
+  color: #1a1a1a;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.view-demo-btn:hover {
+  background-color: rgba(24, 26, 28, 0.04);
+  transform: translateY(-1px);
 }
 
 /* Stacked Logo Animation */

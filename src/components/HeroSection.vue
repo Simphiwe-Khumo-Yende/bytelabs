@@ -1,9 +1,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { animate, stagger } from 'motion'
-import gaiosophyLogo from '../assets/gaiosophy logo.png'
-import strikepointLogo from '../assets/strikepoint logo.png'
-import happayLogo from '../assets/happay logo.png'
+import dashboardReference from '../assets/dashboard-reference.png'
 
 const heroRef = ref(null)
 
@@ -19,7 +17,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <section style="background-color: #f5f5f7; padding-top: 96px; padding-bottom: 0; overflow: hidden;">
+  <section style="background-color: #fff; padding-top: 96px; padding-bottom: 0; overflow: hidden;">
     <div ref="heroRef" style="max-width: 1100px; margin-left: auto; margin-right: auto; padding-left: 24px; padding-right: 24px;">
       <!-- Announcement pill -->
       <div data-hero style="opacity:0; display: flex; justify-content: center; margin-bottom: 48px;">
@@ -56,11 +54,14 @@ onMounted(() => {
 
       <!-- Product mockup -->
       <div data-hero style="opacity:0; max-width: 1100px; margin-left: auto; margin-right: auto; position: relative;">
-        <!-- Gradient blobs -->
-        <div class="hero-blob-left"></div>
-        <div class="hero-blob-right"></div>
+        <img
+          class="dashboard-reference-image"
+          :src="dashboardReference"
+          alt="Analytics dashboard overview"
+        />
 
-        <!-- Dashboard mockup -->
+        <!-- Legacy dashboard kept temporarily for easy rollback. -->
+        <template v-if="false">
         <div class="dashboard-mockup">
           <!-- Sidebar - hidden on mobile -->
           <div class="dashboard-sidebar">
@@ -207,6 +208,7 @@ onMounted(() => {
             </div>
           </div>
         </div>
+        </template>
       </div>
 
       <!-- Trusted by section -->
@@ -281,6 +283,12 @@ onMounted(() => {
 </template>
 
 <style scoped>
+.dashboard-reference-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .hero-blob-left {
   position: absolute;
   left: -60px;

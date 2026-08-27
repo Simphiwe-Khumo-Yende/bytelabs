@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from '../pages/HomePage.vue'
 import BlogPage from '../pages/BlogPage.vue'
 import ContactPage from '../pages/ContactPage.vue'
+import UIShowcasePage from '../pages/UIShowcasePage.vue'
+import AboutPage from '../pages/AboutPage.vue'
 import NotFoundPage from '../pages/NotFoundPage.vue'
 
 const routes = [
@@ -19,6 +21,16 @@ const routes = [
     path: '/contact',
     name: 'Contact',
     component: ContactPage
+  },
+  {
+    path: '/ui-ux-design',
+    name: 'UIShowcase',
+    component: UIShowcasePage
+  },
+  {
+    path: '/about',
+    name: 'About',
+    component: AboutPage
   },
   {
     path: '/:pathMatch(.*)*',

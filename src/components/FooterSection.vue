@@ -42,7 +42,7 @@ onMounted(() => {
           <ul>
             <li><router-link to="/#services">Web Development</router-link></li>
             <li><router-link to="/#services">Mobile Apps</router-link></li>
-            <li><router-link to="/#services">UI/UX Design</router-link></li>
+            <li><router-link to="/ui-ux-design">UI/UX Design</router-link></li>
             <li><router-link to="/#services">Backend Systems</router-link></li>
           </ul>
         </div>
